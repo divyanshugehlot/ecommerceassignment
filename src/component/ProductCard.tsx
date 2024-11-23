@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
-import { useCart } from "../context/cartContext";
+import { useCart } from "../context/CartContext";
+
 interface ProductCardProps {
   id: number;
   title: string;
@@ -15,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, price, image ,id,descr
 
   // Handle Add to Cart button click
   const handleAddToCart = () => {
-    const product = { id, title, price, image, description }; // Create a product object
+    const product = { id, title, price, image, description,cartQuantity: 1 }; // Create a product object
     addToCart(product); // Add the product to the cart via context
   };
   return (

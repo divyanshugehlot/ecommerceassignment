@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useCart } from "../../context/cartContext";
+import { useCart } from "../../context/CartContext";
 
 import "./Cart.css"
 
@@ -9,16 +9,15 @@ const Cart = () => {
   const {
     cartItems,
     cartTotalAmount,
-    cartTotalQuantity,
     addToCart,
     decreaseCart,
     removeFromCart,
-    clearCart,
     getTotals,
   } =useCart()
   useEffect(() => {
     getTotals(); // Calculate totals whenever cart items change
   }, [cartItems, getTotals]);
+  console.log(cartItems,"cart items")
 
   const handleAddToCart = (product: any) => {
     addToCart(product); // Add to cart
@@ -70,9 +69,9 @@ const Cart = () => {
           {cartItems.map((cartItem) => (
             <div className="cart-item" key={cartItem.id}>
               <div className="cart-product">
-                <img src={cartItem.image} alt={cartItem.name} />
+                <img src={cartItem.image} alt={"image"} />
                 <div>
-                  <h3>{cartItem.name}</h3>
+                  <h3 className=" font-semibold text-blue-600 " >{cartItem.title}</h3>
                   <p>{cartItem.description}</p>
                   <button onClick={() => handleRemoveFromCart(cartItem)}>
                     Remove

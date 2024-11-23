@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header"; // Import your Header component
-import { useCart } from "../context/cartContext";
+import { useCart } from "../context/CartContext";
 
 interface LayoutProps {
   children: React.ReactNode;

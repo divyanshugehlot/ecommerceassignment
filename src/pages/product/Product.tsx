@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useProductById from "../../hooks/useProductById";
-import { useCart } from "../../context/cartContext";
+import { useCart } from "../../context/CartContext";
 
 interface Product {
   id: number;
@@ -18,7 +18,7 @@ const Product: React.FC = () => {
   
   const { id } = useParams<{ id: string }>();
   const productId = parseInt(id || "0", 10);
-  const { product, loading, error } = useProductById(productId);
+  const { product, loading } = useProductById(productId);
   
   const { addToCart } = useCart();
   

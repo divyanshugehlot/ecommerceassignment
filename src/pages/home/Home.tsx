@@ -10,9 +10,9 @@ const Home = () => {
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [sortOption, setSortOption] = useState<string>("");
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 100]);
-const [ratingRange, setRatingRange] = useState<[number, number]>([0, 5]);
-const [sort, setSort] = useState<string>("");
+  const [priceRange] = useState<[number, number]>([0, 100]);
+const [ratingRange ] = useState<[number, number]>([0, 5]);
+const [sort] = useState<string>("");
 
 const updateFiltersInUrl = () => {
   const queryParams = new URLSearchParams();
